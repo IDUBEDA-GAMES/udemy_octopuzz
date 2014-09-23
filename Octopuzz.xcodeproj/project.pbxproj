@@ -127,6 +127,7 @@
 			buildPhases = (
 				FE4F8DEE19CC2A72006C7A97 /* Sources */,
 				FE4F8DEF19CC2A72006C7A97 /* Frameworks */,
+				FE4F8E1B19CC309B006C7A97 /* Run Script */,
 				FE4F8DF019CC2A72006C7A97 /* Resources */,
 			);
 			buildRules = (
@@ -213,6 +214,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FE4F8E1B19CC309B006C7A97 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FE4F8DEE19CC2A72006C7A97 /* Sources */ = {
@@ -415,6 +433,7 @@
 				FE4F8E1719CC2A72006C7A97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE4F8E1819CC2A72006C7A97 /* Build configuration list for PBXNativeTarget "OctopuzzTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +442,7 @@
 				FE4F8E1A19CC2A72006C7A97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
